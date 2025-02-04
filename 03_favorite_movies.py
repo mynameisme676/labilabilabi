@@ -15,4 +15,9 @@ my_favorite_movies = 'Терминатор, Пятый элемент, Ават�
 # Использовать .split() или .find()или другие методы строки нельзя - пользуйтесь только срезами,
 # как указано в задании!
 
-# TODO здесь ваш код
+first_film = my_favorite_movies[0:10]
+last_film = my_favorite_movies[42:60]
+second_film = my_favorite_movies[12:25]
+second_from_end_film = my_favorite_movies[35:40]
+
+print(f'первый: {first_film}\nпоследний: {last_film}\nвторой: {second_film}\nвторой с конца: {second_from_end_film}')
