@@ -25,9 +25,6 @@ zoo.remove('elephant')
 # Номера при выводе должны быть понятны простому человеку, не программисту.
 # TODO здесь ваш код
 
-c = 1
-for Z in zoo:
-    if Z == "lion" or Z == "lark":
-        print(f"В клетке {c} сидит {"лев" if Z == "lion" else "жаворонок"}")
-    c += 1
+print(f"В клетке {zoo.index('lion') + 1} сидит лев")
+print(f"В клетке {zoo.index('lark') + 1} сидит жаворонок")
 
