@@ -34,3 +34,26 @@ for name_1, coords_1 in sites.items():
 
 ### Вывод программы
 ![alt text](screenshots/image.png)
+
+# 01_circle.py
+## Задание 1. Выведите на консоль значение прощади этого круга с точностю до 4-х знаков после запятой.
+### INPUT
+```python
+radius = 42
+```
+### OUTPUT
+```python
+print(round(3.1415926 * (radius ** 2), 4))
+```
+
+### Выполнение задачи
+Формула для подсчета площади круга = Pi * R^2
+После подсчета, округялем значение.
+
+### Решение
+```python
+print(round(3.1415926 * (radius ** 2), 4))
+```
+
+### Вывод программы
+![alt text](screenshots/image1.png)
