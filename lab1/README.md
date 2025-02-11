@@ -57,3 +57,65 @@ print(round(3.1415926 * (radius ** 2), 4))
 
 ### Вывод программы
 ![alt text](screenshots/image1.png)
+## Задание 2. Если точка point лежит внутри того самого круга [центр в начале координат (0, 0), radius = 42], то выведите на консоль True, Или False, если точка лежит вовне круга.
+### INPUT
+```python
+point_1 = (23, 34)
+point_2 = (30, 30)
+```
+### OUTPUT
+```python
+point_in_1 = (point_1[0]**2 + point_1[1]**2)**0.5
+point_in_2 = (point_2[0]**2 + point_2[1]**2)**0.5
+```
+
+### Выполнение задачи
+Мы определяем расстояние от точки до начала координат, затем сверяем попадает ли она в наш радиус или нет.
+### Решение
+```python
+print(point_in_1 <= radius)
+print(point_in_2 <= radius)
+```
+### Вывод программы
+![alt text](screenshots/image2.png)
+
+# 02_operations.py
+## Расставьте знаки операций "плюс", "минус", "умножение" и скобки между числами "1 2 3 4 5" так, что бы получилось число "25".
+### Решение
+```python
+result = 1 * (2 + 3) * 4 + 5
+print(result)
+```
+### Вывод программы
+![alt text](screenshots/image3.png)
+
+# 03_favorite_movies.py
+## Выведите на консоль с помощью индексации строки, последовательно: первый фильм, последний, второй, второй с конца.
+### INPUT
+```python
+my_favorite_movies = 'Терминатор, Пятый элемент, Аватар, Чужие, Назад в будущее'
+```
+
+### OUTPUT
+```python
+first_film = my_favorite_movies[0:10]
+last_film = my_favorite_movies[42:60]
+second_film = my_favorite_movies[12:25]
+second_from_end_film = my_favorite_movies[35:40]
+```
+
+### Выполнение задачи
+В данной задаче мы можем использовать только срезы. Цифра **x** в [x:y] означает начало среза, **y** означает конец среза. Срез идет посимвольно.
+
+### Решение
+```python
+first_film = my_favorite_movies[0:10]
+last_film = my_favorite_movies[42:60]
+second_film = my_favorite_movies[12:25]
+second_from_end_film = my_favorite_movies[35:40]
+
+print(f'первый: {first_film}\nпоследний: {last_film}\nвторой: {second_film}\nвторой с конца: {second_from_end_film}')
+```
+
+### Вывод программы
+![alt text](screenshots/image4.png)
