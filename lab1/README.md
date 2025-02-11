@@ -252,3 +252,244 @@ print(f"В клетке {zoo.index('lark') + 1} сидит жаворонок")
 
 ### Вывод программы 
 ![alt text](screenshots/image10.png)
+
+# 06_songs_list.py
+## Задание 1. Распечатайте общее время звучания трех песен: 'Halo', 'Enjoy the Silence' и 'Clean' в формате "Три песни звучат ХХХ.XX минут".
+### INPUT
+```python
+violator_songs_list = [
+    ['World in My Eyes', 4.86],
+    ['Sweetest Perfection', 4.43],
+    ['Personal Jesus', 4.56],
+    ['Halo', 4.9],
+    ['Waiting for the Night', 6.07],
+    ['Enjoy the Silence', 4.20],
+    ['Policy of Truth', 4.76],
+    ['Blue Dress', 4.29],
+    ['Clean', 5.83],
+]
+```
+### Выполнение задачи
+Мы имеем список, состоящий из названия песни и ее продолжительности в минутах. Нам нужно посчитать время звучания трех песен. Для этого мы проходимся по списку, ищем нужные песни и их время суммируем в переменную amount.
+
+### Решение
+```python
+amount = 0.0
+for song in violator_songs_list:
+    if song[0] in ['Halo', 'Enjoy the Silence', 'Clean']:
+        amount += song[1]
+
+amount = round(amount, 2)
+print(f"Три песни звучат {amount} минут")
+```
+### Вывод программы
+![alt text](screenshots/image11.png)
+## Задание 2. Распечатайте общее время звучания трех песен: 'Sweetest Perfection', 'Policy of Truth' и 'Blue Dress'
+### INPUT
+```python
+violator_songs_dict = {
+    'World in My Eyes': 4.76,
+    'Sweetest Perfection': 4.43,
+    'Personal Jesus': 4.56,
+    'Halo': 4.30,
+    'Waiting for the Night': 6.07,
+    'Enjoy the Silence': 4.6,
+    'Policy of Truth': 4.88,
+    'Blue Dress': 4.18,
+    'Clean': 5.68,
+}
+```
+### Выполнение задачи
+Мы имеем словарь с названиями песен и их длительностью в формате ключ:значение. Мы проходимся по списку и ищем ключи, которые подходят под наше условие т.е 'Sweetest Perfection', 'Policy of Truth' и 'Blue Dress'. Берем длительность звучания и суммируем в переменную amount.
+
+### Решение
+```python
+amount = 0.0
+
+for k, v in violator_songs_dict.items():
+    if k in ['Sweetest Perfection', 'Policy of Truth', 'Blue Dress']:
+        amount += v
+
+amount = round(amount)
+```
+
+### Вывод программы
+![alt text](screenshots/image12.png)
+# 07_secret.py
+## Задание 1. Нужно его расшифровать и вывести на консоль в удобочитаемом виде.
+### INPUT
+```python
+secret_message = [
+    'квевтфпп6щ3стмзалтнмаршгб5длгуча',
+    'дьсеы6лц2бане4т64ь4б3ущея6втщл6б',
+    'т3пплвце1н3и2кд4лы12чф1ап3бкычаь',
+    'ьд5фму3ежородт9г686буиимыкучшсал',
+    'бсц59мегщ2лятьаьгенедыв9фк9ехб1а',
+]
+```
+### OUTPUT
+```bash
+в бане веник дороже денег
+```
+
+### Выполнение задачи
+У нас есть описание ключа для расшифровки этого сообщения. Всего у нас 5 слов, каждое слово в каждом элементе списка. Используем срезы.
+
+### Решение
+```python
+word1 = secret_message[0][3]
+word2 = secret_message[1][9:13]
+word3 = secret_message[2][5:15:2]
+word4 = secret_message[3][7:13][::-1]
+word5 = secret_message[4][16:21][::-1]
+```
+
+### Вывод программы
+![alt text](screenshots/image13.png)
+# 08_garnden.py
+## Задание 1. Создайте множество цветов, произрастающих в саду и на лугу.
+### INPUT
+```python
+garden = ('ромашка', 'роза', 'одуванчик', 'ромашка', 'гладиолус', 'подсолнух', 'роза', )
+meadow = ('клевер', 'одуванчик', 'ромашка', 'клевер', 'мак', 'одуванчик', 'ромашка', )
+```
+
+### Выполнение задачи
+Воспользуемся встроенным методом преобрзования **set**.
+
+### Решение
+```python
+garden_set = set(garden)
+meadow_set = set(meadow)
+```
+
+## Задание 2. Вывести цветы используя операции для работы с множествами.
+### Выполнение задачи
+Мы воспользуемся операциями, такими как &, -, |.
+
+### Решение
+```python
+print(garden_set | meadow_set) # выведите на консоль все виды цветов
+print(garden_set & meadow_set) # выведите на консоль те, которые растут и там и там
+print(garden_set - meadow_set) # выведите на консоль те, которые растут в саду, но не растут на лугу
+print(meadow_set - garden_set) # выведите на консоль те, которые растут на лугу, но не растут в саду
+```
+
+### Вывод программы
+![alt text](screenshots/image14.png)
+# 09_shopping.py
+## Задание 1. Создайте словарь цен на продкты следующего вида (писать прямо в коде).
+### INPUT
+```python
+shops = {
+    'ашан':
+        [
+            {'name': 'печенье', 'price': 10.99},
+            {'name': 'конфеты', 'price': 34.99},
+            {'name': 'карамель', 'price': 45.99},
+            {'name': 'пирожное', 'price': 67.99}
+        ],
+    'пятерочка':
+        [
+            {'name': 'печенье', 'price': 9.99},
+            {'name': 'конфеты', 'price': 32.99},
+            {'name': 'карамель', 'price': 46.99},
+            {'name': 'пирожное', 'price': 59.99}
+        ],
+    'магнит':
+        [
+            {'name': 'печенье', 'price': 11.99},
+            {'name': 'конфеты', 'price': 30.99},
+            {'name': 'карамель', 'price': 41.99},
+            {'name': 'пирожное', 'price': 62.99}
+        ],
+}
+```
+### OUTPUT
+```python
+sweets = {}
+```
+
+### Выполнение задачи
+Словарь ключ:значение. Проходимся по всем магазинам и товарам в них. Добавляем в новый, но делим по категориям **товаров**.
+
+### Решение
+```python
+for name, tovar in shops.items():
+    for t in tovar:
+        if t['name'] not in sweets:
+            sweets[t['name']] = []
+        sweets[t['name']].append({"shop": name, "price": t['price']})
+```
+## Задание 2. Указать надо только по 2 магазина с минимальными ценами
+### Решение
+```python
+for shop, shoplist in sweets.items():
+    shoplist.sort(key=lambda x: x['price'])
+    print(shoplist[1:2])
+```
+
+### Вывод программы
+![alt text](screenshots/image15.png)
+# 10_store.py
+## Задание 1. Вывести стоимость каждого вида товара на складе: один раз распечать сколько всего столов и их общая стоимость, один раз распечать сколько всего стульев и их общая стоимость.
+### INPUT
+```python
+goods = {
+    'Лампа': '12345',
+    'Стол': '23456',
+    'Диван': '34567',
+    'Стул': '45678',
+}
+
+store = {
+    '12345': [
+        {'quantity': 27, 'price': 42},
+    ],
+    '23456': [
+        {'quantity': 22, 'price': 510},
+        {'quantity': 32, 'price': 520},
+    ],
+    '34567': [
+        {'quantity': 2, 'price': 1200},
+        {'quantity': 1, 'price': 1150},
+    ],
+    '45678': [
+        {'quantity': 50, 'price': 100},
+        {'quantity': 12, 'price': 95},
+        {'quantity': 43, 'price': 97},
+    ],
+}
+```
+### Ограничения
+Циклы использовать нельзя.
+
+### Решение
+```python
+##
+decks_q_a = store[goods['Стол']][0]['quantity']
+decks_q_b = store[goods['Стол']][1]['quantity']
+decks_cost_a = decks_q_a * store[goods['Стол']][0]['price']
+decks_cost_b = decks_q_b * store[goods['Стол']][1]['price']
+
+print("Стол -", decks_q_a + decks_q_b, 'шт, стоимость', decks_cost_a + decks_cost_b, 'руб')
+##
+divan_q_a = store[goods['Диван']][0]['quantity']
+divan_q_b = store[goods['Диван']][1]['quantity']
+divan_cost_a = divan_q_a * store[goods['Диван']][0]['price']
+divan_cost_b = divan_q_b * store[goods['Диван']][1]['price']
+
+print("Диван -", divan_q_a + divan_q_b, 'шт, стоимость', divan_cost_a + divan_cost_b, 'руб')
+##
+stul_q_a = store[goods['Стул']][0]['quantity']
+stul_q_b = store[goods['Стул']][1]['quantity']
+stul_q_c = store[goods['Стул']][2]['quantity']
+stul_cost_a = stul_q_a * store[goods['Стул']][0]['price']
+stul_cost_b = stul_q_b * store[goods['Стул']][1]['price']
+stul_cost_c = stul_q_c * store[goods['Стул']][2]['price']
+
+print("Стул -", stul_q_a + stul_q_b + stul_q_c, 'шт, стоимость', stul_cost_a + stul_cost_b + stul_cost_c, 'руб')
+```
+
+### Вывод программы
+![alt text](screenshots/image16.png)
